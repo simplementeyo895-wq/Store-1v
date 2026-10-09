@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#08051b">
+<title>PS3GAMESFREESTORE</title>
+<style>
+:root {
+  --bg:#050716; --panel:rgba(4,10,32,.94); --cyan:#00cfff;
+  --blue:#147cff; --pink:#ff31d2; --purple:#8c35ff; --text:#eaf8ff;
+  --muted:#a6c7ed;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; color:var(--text); font-family:Arial,Helvetica,sans-serif;
+  background:
+    linear-gradient(180deg,rgba(3,4,22,.10),rgba(3,4,22,.75)),
+    radial-gradient(ellipse at 50% 0%,#32105d 0%,transparent 48%),
+    linear-gradient(135deg,#030817,#110628 55%,#05091b);
+  min-height:100vh;
+}
+body:before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+   repeating-linear-gradient(0deg,transparent 0 43px,rgba(0,207,255,.12) 44px 45px),
+   repeating-linear-gradient(90deg,transparent 0 43px,rgba(255,49,210,.10) 44px 45px);
+  transform:perspective(440px) rotateX(58deg) scale(1.7);
+  transform-origin:bottom center;opacity:.5;
+}
+a{color:inherit}
+.hero{
+  position:relative;overflow:hidden;text-align:center;padding:25px 16px 22px;
+  background:linear-gradient(90deg,rgba(2,5,24,.95),rgba(20,6,47,.82),rgba(2,5,24,.95));
+  border-bottom:2px solid var(--pink);
+  box-shadow:0 8px 32px #120a3b;
+}
+.sun{position:absolute;width:150px;height:150px;border-radius:50%;right:7%;top:-48px;
+  background:linear-gradient(#ffb34f,#ff258f 68%,#722aff);
+  box-shadow:0 0 42px #ff278b88;opacity:.75}
+.sun:after{content:"";position:absolute;inset:50% 0 0;
+  background:repeating-linear-gradient(0deg,#17072d 0 5px,transparent 6px 13px)}
+.hero-inner{position:relative;z-index:1;max-width:1200px;margin:auto}
+.brand{font-size:clamp(26px,5vw,58px);font-weight:1000;letter-spacing:1px;
+  background:linear-gradient(90deg,#ff4bd9,#9d66ff,#00dcff);color:transparent;
+  -webkit-background-clip:text;background-clip:text;text-shadow:0 0 24px #672eff44}
+.pslogo{color:#f4f7ff;font-size:13px;letter-spacing:5px}
+.tagline{color:#a8eaff;letter-spacing:2px;font-size:clamp(10px,2vw,15px)}
+.layout{max-width:1400px;margin:18px auto;padding:0 16px;display:grid;
+  grid-template-columns:220px minmax(0,1fr) 260px;gap:15px}
+.panel{background:var(--panel);border:1px solid #174a8c;border-radius:15px;
+  box-shadow:0 0 22px #092e7450,inset 0 0 24px #0a124b45}
+.sidebar{padding:12px;height:max-content}
+.navitem{display:block;text-decoration:none;padding:14px 12px;margin:5px 0;
+  border:1px solid transparent;border-radius:8px;color:#b9e9ff;font-weight:bold}
+.navitem span{display:inline-block;width:30px;font-size:20px}
+.navitem:hover,.navitem.active{background:linear-gradient(90deg,#007eff,#1836a6);
+  color:white;border-color:#00e5ff;box-shadow:0 0 16px #008dff99}
+.compat{margin-top:20px;padding:16px;border:1px solid #154f8a;border-radius:10px;
+  color:var(--cyan);font-weight:bold;text-align:center}
+main{min-width:0;padding:14px}
+.gta-banner{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  min-height:170px;padding:22px;border:1px solid #2872b8;border-radius:12px;
+  background:
+   linear-gradient(90deg,rgba(2,7,25,.35),rgba(3,8,28,.88)),
+   radial-gradient(circle at 70% 25%,#ff5b9c 0,#4b2d85 20%,transparent 48%),
+   linear-gradient(135deg,#075b94,#24104e 55%,#070d24);
+  overflow:hidden}
+.gta-banner h2{font-size:clamp(30px,4vw,52px);font-style:italic;margin:0;text-shadow:0 0 18px #00cfff}
+.gta-banner p{margin:6px 0 0;color:#b8eaff}
+.pill{display:inline-block;border:2px solid var(--cyan);border-radius:7px;padding:6px 12px;
+  color:var(--cyan);font-weight:bold;transform:skew(-7deg);white-space:nowrap}
+.section-title{color:#8feaff;font-size:18px;margin:20px 0 10px}
+.mod{
+ display:grid;grid-template-columns:120px minmax(0,1fr) 42px;align-items:center;gap:13px;
+ padding:10px;margin:10px 0;border:1px solid #4d2aa0;border-radius:12px;
+ background:linear-gradient(110deg,#07132c,#070b20);text-decoration:none;
+ transition:transform .15s,border-color .15s,box-shadow .15s
+}
+.mod:hover,.mod:focus{border-color:var(--cyan);box-shadow:0 0 18px #008dff99;transform:translateY(-2px)}
+.thumb{height:76px;border-radius:8px;display:grid;place-items:center;font-size:30px;
+ background:radial-gradient(circle at 50% 30%,#ff4bc855,transparent 50%),linear-gradient(135deg,#123e75,#090b24);
+ border:1px solid #254c9a}
+.mod h3{font-size:16px;margin:0 0 5px;color:#c5edff;overflow-wrap:anywhere}
+.mod p{font-size:13px;color:#9fc7f1;margin:0;line-height:1.4}
+.arrow{font-size:25px;color:var(--cyan);border:1px solid #087fc0;border-radius:7px;text-align:center;padding:3px}
+.right{padding:15px;height:max-content}
+.right h3{font-size:15px;margin:0 0 13px;color:#b8f1ff;border-bottom:1px solid #24538b;padding-bottom:10px}
+.info{font-size:13px;color:#b7d9f9;line-height:1.9}
+.info b{color:#e8f8ff}
+.tip{margin-top:15px;border:1px solid #174a8c;border-radius:10px;padding:13px}
+.tip ul{padding-left:19px;color:#b7d9f9;font-size:13px;line-height:1.9}
+.tip li::marker{color:#00ffc3}
+.slogan{font-size:23px;font-weight:bold;font-style:italic;color:#00bfff;text-align:center;margin:25px 0 5px}
+footer{text-align:center;padding:18px;color:#91afd0;font-size:12px}
+.notice{font-size:12px;color:#9bb9d8;line-height:1.5}
+@media(max-width:980px){
+ .layout{grid-template-columns:190px minmax(0,1fr)}
+ .right{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+ .right .slogan{grid-column:1/-1}
+}
+@media(max-width:640px){
+ .layout{display:block;margin:10px auto;padding:0 9px}
+ .sidebar{display:flex;overflow-x:auto;gap:4px;margin-bottom:10px;padding:6px}
+ .navitem{white-space:nowrap;padding:10px 9px;font-size:13px}
+ .navitem span{width:auto;margin-right:5px}
+ .compat{display:none}
+ main{padding:8px}
+ .gta-banner{min-height:130px;padding:14px}
+ .gta-banner h2{font-size:30px}
+ .mod{grid-template-columns:62px minmax(0,1fr) 30px;gap:8px;padding:8px}
+ .thumb{height:62px;font-size:23px}
+ .mod h3{font-size:14px}
+ .mod p{font-size:12px}
+ .right{display:block;margin-top:10px}
+ .sun{right:-30px}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="sun"></div>
+  <div class="hero-inner">
+    <div class="pslogo">♧  PLAYSTATION 3  ♧</div>
+    <div class="brand">PS3GAMESFREESTORE</div>
+    <div class="tagline">MODS · HERRAMIENTAS · FONDOS · TU PS3, A TU ESTILO</div>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="panel sidebar" aria-label="Navegación">
+    <a class="navitem" href="#inicio"><span>⌂</span> Inicio</a>
+    <a class="navitem active" href="#gta"><span>🎮</span> GTA V</a>
+    <a class="navitem" href="#herramientas"><span>🔧</span> Herramientas</a>
+    <a class="navitem" href="#fondos"><span>▧</span> Fondos y temas</a>
+    <a class="navitem" href="#ajustes"><span>⚙</span> Ajustes</a>
+    <a class="navitem" href="#acerca"><span>ⓘ</span> Acerca de</a>
+    <div class="compat">♛<br>BLES 1.27<br><small>CATÁLOGO OBJETIVO</small></div>
+  </aside>
+
+  <main class="panel" id="inicio">
+    <section class="gta-banner" id="gta">
+      <div>
+        <div style="font-size:12px;letter-spacing:3px;color:#b8eaff">GRAND THEFT AUTO V</div>
+        <h2>GTA V</h2>
+        <p>MODS &amp; HERRAMIENTAS</p>
+      </div>
+      <span class="pill">BLES 1.27</span>
+    </section>
+
+    <h2 class="section-title">✦ CATÁLOGO GTA V</h2>
+
+    <a class="mod" href="#reloaded">
+      <div class="thumb">🌆</div>
+      <div><h3>Reloaded 1.27 BLES.pkg</h3><p>80,04 MB · Archivo PKG<br>Enlace pendiente de verificar.</p></div>
+      <div class="arrow">›</div>
+    </a>
+    <a class="mod" href="#retrovibe">
+      <div class="thumb">🏎️</div>
+      <div><h3>RetroVibeBLES.pkg</h3><p>90,89 MB · Archivo PKG<br>Enlace pendiente de verificar.</p></div>
+      <div class="arrow">›</div>
+    </a>
+    <a class="mod" href="#blackv8">
+      <div class="thumb">🌃</div>
+      <div><h3>TheBlack_V8_Bles.pkg</h3><p>140 MB · Archivo PKG<br>Enlace pendiente de verificar.</p></div>
+      <div class="arrow">›</div>
+    </a>
+    <a class="mod" href="#webman">
+      <div class="thumb">🔧</div>
+      <div><h3>webMAN_MOD_1.47.48s_Installer.pkg</h3><p>14,83 MB · Herramienta<br>Enlace pendiente de verificar.</p></div>
+      <div class="arrow">›</div>
+    </a>
+
+    <h2 class="section-title" id="herramientas">🔧 HERRAMIENTAS</h2>
+    <p class="notice">Añade aquí utilidades verificadas para PS3 HEN. Revisa siempre la versión del sistema y la procedencia de cada archivo.</p>
+    <h2 class="section-title" id="fondos">🌌 FONDOS Y TEMAS</h2>
+    <p class="notice">Próximamente: fondos y temas dinámicos compatibles con PS3.</p>
+    <h2 class="section-title" id="ajustes">⚙ AJUSTES</h2>
+    <p class="notice">Este portal no detecta ni modifica el firmware de tu consola. Comprueba la versión manualmente en Ajustes del sistema.</p>
+    <h2 class="section-title" id="acerca">ⓘ ACERCA DE</h2>
+    <p class="notice">PS3GAMESFREESTORE es un proyecto independiente, no afiliado a Sony ni a Rockstar Games.</p>
+  </main>
+
+  <aside class="panel right">
+    <section>
+      <h3>ⓘ INFORMACIÓN</h3>
+      <div class="info">
+        ⚙ <b>Juego:</b> GTA V<br>
+        ▣ <b>Región objetivo:</b> BLES<br>
+        ▤ <b>Versión objetivo:</b> 1.27<br>
+        🎮 <b>Plataforma:</b> PS3 HEN
+      </div>
+    </section>
+    <section class="tip">
+      <h3>☆ RECOMENDACIONES</h3>
+      <ul>
+        <li>Activa HEN antes de usar homebrew.</li>
+        <li>Haz copia de tus partidas.</li>
+        <li>Comprueba compatibilidad y conflictos.</li>
+        <li>Descarga solo archivos de confianza.</li>
+      </ul>
+    </section>
+    <div class="slogan">LOS SANTOS<br>TE ESPERA ✦</div>
+  </aside>
+</div>
+
+<footer>PS3GAMESFREESTORE · DISEÑO RETRO NEÓN · CATÁLOGO NO OFICIAL</footer>
+</body>
+</html>
