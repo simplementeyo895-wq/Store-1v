@@ -1,0 +1,104 @@
+{
+"herramientas": [
+{
+"nombre": "HEN Installer",
+"descripcion": "Instalador oficial de PS3HEN.",
+"categoria": "Herramientas",
+"url": "https://www.ps3xploit.me/hen/installer/"
+},
+{
+"nombre": "webMAN MOD",
+"descripcion": "Utilidad para administrar funciones de una PS3 modificada.",
+"categoria": "Herramientas",
+"url": "https://github.com/aldostools/webMAN-MOD/releases"
+},
+{
+"nombre": "IRISMAN",
+"descripcion": "Administrador de archivos y otras funciones para PS3.",
+"categoria": "Herramientas",
+"url": "https://github.com/aldostools/IRISMAN/releases"
+},
+{
+"nombre": "Apollo Save Tool",
+"descripcion": "Herramienta para administrar partidas guardadas compatibles.",
+"categoria": "Herramientas",
+"url": "https://github.com/bucanero/apollo-ps3/releases"
+},
+{
+"nombre": "PKGi PS3",
+"descripcion": "Cliente de catálogo para contenido compatible.",
+"categoria": "Herramientas",
+"url": "https://github.com/bucanero/pkgi-ps3/releases"
+}
+],
+"juegos": [
+{
+"nombre": "2048 para PS3",
+"descripcion": "Juego de rompecabezas para PS3.",
+"categoria": "Homebrew",
+"url": "https://github.com/bucanero/2048-ps3/releases/latest/download/2048-ps3.pkg"
+},
+{
+"nombre": "Minesweeper para PS3",
+"descripcion": "Buscaminas en versión homebrew.",
+"categoria": "Homebrew",
+"url": "https://github.com/bucanero/minesweeper-ps3/releases/latest/download/minesweeper-ps3.pkg"
+},
+{
+"nombre": "Sudoku para PS3",
+"descripcion": "Sudoku para jugar con tu consola.",
+"categoria": "Homebrew",
+"url": "https://github.com/bucanero/sudoku-ps3/releases/latest/download/sudoku-ps3.pkg"
+},
+{
+"nombre": "Cave Story",
+"descripcion": "Aventura de plataformas; revisa los requisitos del port.",
+"categoria": "Homebrew",
+"url": "https://github.com/ps3homebrew/nxengine-ps3/releases/latest/download/nxengine_ps3.pkg"
+},
+{
+"nombre": "Super Mario War",
+"descripcion": "Juego de batalla de plataformas en versión homebrew.",
+"categoria": "Homebrew",
+"url": "https://github.com/ps3homebrew/supermariowar-ps3/releases/latest/download/smw_ps3.pkg"
+},
+{
+"nombre": "Flappy Bird",
+"descripcion": "Juego arcade sencillo para PS3.",
+"categoria": "Homebrew",
+"url": "https://github.com/bucanero/flappybird-ps3/releases/latest/download/flappybird-ps3.pkg"
+},
+{
+"nombre": "Sonic Robo Blast 2",
+"descripcion": "Juego de plataformas en 3D; revisa la compatibilidad.",
+"categoria": "Homebrew",
+"url": "https://github.com/srb2/srb2/releases/download/srb2-ps3/srb2_ps3.pkg"
+}
+],
+"mods": [
+{
+"nombre": "RetroVibe BLES",
+"descripcion": "Variante para la región BLES. Comprueba versión y compatibilidad antes de instalar.",
+"categoria": "Mods",
+"url": "https://www.mediafire.com/file/ovs20kdltplhfrq/RetroVibeBLES.pkg/file"
+},
+{
+"nombre": "RetroVibe BLUS",
+"descripcion": "Variante para la región BLUS. Comprueba versión y compatibilidad antes de instalar.",
+"categoria": "Mods",
+"url": "https://www.mediafire.com/file/inypvckcbeepqq0/RetroVibeBLUS.pkg/file"
+},
+{
+"nombre": "RetroVibe NPEB",
+"descripcion": "Variante para la región NPEB. Comprueba versión y compatibilidad antes de instalar.",
+"categoria": "Mods",
+"url": "https://www.mediafire.com/file/ev2yh3vnmw0q1a9/RetroVibeNPEB.pkg/file"
+},
+{
+"nombre": "RetroVibe NPUB",
+"descripcion": "Variante para la región NPUB. Comprueba versión y compatibilidad antes de instalar.",
+"categoria": "Mods",
+"url": "https://www.mediafire.com/file/1567x11ztwdu6d3/RetroVibeNPUB.pkg/file"
+}
+]
+}
